@@ -15,7 +15,7 @@
 <header class="site-header"><div class="wrap bar">
 <a class="brand" href="index.html"><img class="logo" src="img/logo.png" alt="" height="44"><span>Evangelical Covenant<br>Church Manila</span></a>
 <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav id="nav"><ul><li><a href="index.html">Home</a></li><li><a href="statement-of-faith.html">Statement of Faith</a></li><li><a href="ministries.html">Ministries</a></li><li><a href="contact.html" aria-current="page">Contact Us</a></li></ul></nav></div></header>
+<nav id="nav"><ul><li><a href="index.html">Home</a></li><li class="has-sub"><a href="about.html">About</a><button class="sub-btn" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="Show About submenu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><ul class="sub" id="sub-about"><li><a href="about.html#statement">Statement of Faith</a></li><li><a href="about.html#covenant">How We Live</a></li><li><a href="about.html#leadership">Leadership</a></li></ul></li><li><a href="ministries.html">Ministries</a></li><li><a href="contact.html" aria-current="page">Contact Us</a></li></ul></nav></div></header>
 <main><section class="page-hero"><div class="wrap"><h1>Contact Us</h1><p></p></div></section><section class="sec"><div class="wrap two">
 <div><h2>Visit us</h2><p class="big">3rd Level, University Mall<br>Taft Ave., Malate, Manila City</p>
 <h2 class="sub">Weekly gatherings</h2><ul class="sched small"><li><div class="when"><b>Sunday</b><span>9:30 AM</span></div><div><h3>Kids’ Sunday School</h3></div></li><li><div class="when"><b>Sunday</b><span>9:30 AM</span></div><div><h3>Foundations Class</h3><p>Church History</p></div></li><li><div class="when"><b>2nd and 4th</b><span>Wednesdays</span></div><div><h3>Women’s Fellowship</h3><p>Online Zoom Meeting</p></div></li><li><div class="when"><b>1st and 3rd</b><span>Wednesdays, 8 PM</span></div><div><h3>Men’s Fellowship</h3><p>Online Zoom Meeting</p></div></li></ul>
@@ -36,6 +36,12 @@
 var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
 if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});}
 var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();
+var subs=document.querySelectorAll('.sub-btn');
+function closeSubs(){subs.forEach(function(s){s.parentNode.classList.remove('open');s.setAttribute('aria-expanded','false');});}
+subs.forEach(function(s){s.addEventListener('click',function(e){e.stopPropagation();var li=s.parentNode,o=!li.classList.contains('open');closeSubs();if(o){li.classList.add('open');s.setAttribute('aria-expanded','true');}});});
+document.querySelectorAll('.sub a').forEach(function(l){l.addEventListener('click',function(){closeSubs();if(n)n.classList.remove('open');if(b)b.setAttribute('aria-expanded','false');});});
+document.addEventListener('click',closeSubs);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSubs();});
 var d=document.querySelector('.toc details');if(d&&window.matchMedia('(max-width:959px)').matches)d.open=false;
 })();
 </script></body></html>

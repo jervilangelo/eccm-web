@@ -15,7 +15,7 @@
 <header class="site-header"><div class="wrap bar">
 <a class="brand" href="index.html"><img class="logo" src="img/logo.png" alt="" height="44"><span>Evangelical Covenant<br>Church Manila</span></a>
 <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav id="nav"><ul><li><a href="index.html">Home</a></li><li><a href="statement-of-faith.html">Statement of Faith</a></li><li><a href="ministries.html" aria-current="page">Ministries</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></div></header>
+<nav id="nav"><ul><li><a href="index.html">Home</a></li><li class="has-sub"><a href="about.html">About</a><button class="sub-btn" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="Show About submenu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><ul class="sub" id="sub-about"><li><a href="about.html#statement">Statement of Faith</a></li><li><a href="about.html#covenant">How We Live</a></li><li><a href="about.html#leadership">Leadership</a></li></ul></li><li><a href="ministries.html" aria-current="page">Ministries</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></div></header>
 <main><section class="page-hero"><div class="wrap"><h1>Ministries</h1><p>Ways to learn, grow, and serve together.</p></div></section><section class="sec"><div class="wrap mlist"><article class="ministry"><div class="mframe"><img class="mimg" src="img/foundations-class.jpg" alt="Foundations Class" loading="lazy"></div><div><h2>Foundations Class</h2><p class="when-tag">Sunday, 9:30 AM</p><p>Church History</p></div></article><article class="ministry"><div class="mframe"><img class="mimg" src="img/men-1.jpg" alt="Men’s Fellowship" loading="lazy"></div><div><h2>Men’s Fellowship</h2><p class="when-tag">1st and 3rd Wednesdays, 8 PM</p><p>Online Zoom Meeting</p></div></article><article class="ministry"><div class="mframe"><img class="mimg" src="img/womens-1.jpg" alt="Women’s Fellowship" loading="lazy"></div><div><h2>Women’s Fellowship</h2><p class="when-tag">2nd and 4th Wednesdays</p><p>Online Zoom Meeting</p></div></article><article class="ministry"><div class="mframe"><img class="mimg" src="img/kids-1.jpg" alt="Kid’s Sunday School" loading="lazy"></div><div><h2>Kid’s Sunday School</h2><p class="when-tag">Sunday, 9:30 AM</p></div></article><article class="ministry"><div class="mframe"><img class="mimg" src="img/pasay-kids-ministry.jpg" alt="Pasay Kids Ministry" loading="lazy"></div><div><h2>Pasay Kids Ministry</h2></div></article></div></section></main>
 <footer class="site-footer"><div class="wrap">
 <div class="foot">
@@ -29,6 +29,12 @@
 var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
 if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});}
 var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();
+var subs=document.querySelectorAll('.sub-btn');
+function closeSubs(){subs.forEach(function(s){s.parentNode.classList.remove('open');s.setAttribute('aria-expanded','false');});}
+subs.forEach(function(s){s.addEventListener('click',function(e){e.stopPropagation();var li=s.parentNode,o=!li.classList.contains('open');closeSubs();if(o){li.classList.add('open');s.setAttribute('aria-expanded','true');}});});
+document.querySelectorAll('.sub a').forEach(function(l){l.addEventListener('click',function(){closeSubs();if(n)n.classList.remove('open');if(b)b.setAttribute('aria-expanded','false');});});
+document.addEventListener('click',closeSubs);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSubs();});
 var d=document.querySelector('.toc details');if(d&&window.matchMedia('(max-width:959px)').matches)d.open=false;
 })();
 </script></body></html>
