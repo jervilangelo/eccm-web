@@ -165,3 +165,6 @@ background:radial-gradient(900px 500px at 85% -10%,#ffe9a8 0%,rgba(255,233,168,0
 .ministry .ph{width:100%;aspect-ratio:4/3}
 @media(min-width:760px){.ministry,.ministry:nth-child(even){grid-template-columns:360px 1fr}
 .ministry:nth-child(even){grid-template-columns:1fr 360px}.ministry:nth-child(even) .mframe,.ministry:nth-child(even) .ph{order:2}}
+
+/* scripture references */
+.prose .refs{font:400 .92rem/1.6 Figtree,system-ui,sans-serif;color:var(--muted);margin:-.3rem 0 0}
