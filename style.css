@@ -317,3 +317,21 @@ nav .sub a{font-size:.9rem}
 .flow li.brief{padding:.9rem 0}
 .flow li.brief h3{margin:0;font-size:1.15rem}
 .flow li.brief p{margin:.15rem 0 0;color:var(--muted)}
+
+/* v17: hamburger icon instead of the word "Menu" */
+.menu-btn{padding:.85rem .7rem;border:0;border-radius:8px;line-height:0}
+.menu-btn:hover{background:var(--gold-soft)}
+.menu-btn .bars{position:relative;display:block;width:26px;height:18px}
+.menu-btn .bars i{position:absolute;left:0;right:0;height:3px;border-radius:2px;background:var(--ink);transition:transform .25s,opacity .2s}
+.menu-btn .bars i:nth-child(1){top:0}
+.menu-btn .bars i:nth-child(2){top:7.5px}
+.menu-btn .bars i:nth-child(3){top:15px}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* v18: Nicene Creed laid out line by line */
+.creed{padding-left:1.2rem;border-left:4px solid var(--gold)}
+.creed p{margin:0 0 1.6rem}
+.creed .ln{display:block;padding-left:1.4rem;text-indent:-1.4rem}
+.creed .fw{margin:0;font-style:italic;color:var(--muted)}
