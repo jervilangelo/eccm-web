@@ -335,3 +335,14 @@ nav .sub a{font-size:.9rem}
 .creed p{margin:0 0 1.6rem}
 .creed .ln{display:block;padding-left:1.4rem;text-indent:-1.4rem}
 .creed .fw{margin:0;font-style:italic;color:var(--muted)}
+
+/* v19: Statement of Faith contents list + About menu highlight */
+.prose article{scroll-margin-top:100px}
+.toc a[aria-current]{font-weight:600;box-shadow:inset 3px 0 var(--gold);padding-left:.6rem}
+@media(min-width:960px){.toc{max-height:calc(100vh - 8rem);overflow-y:auto}}
+@media(min-width:760px){
+.has-sub>a{padding-right:2rem}
+.has-sub>.sub-btn{position:absolute;right:.35rem;top:50%;transform:translateY(-50%);padding:.35rem;border-radius:6px}
+.has-sub>.sub-btn:hover{background:transparent}
+.has-sub:hover>a,.has-sub:focus-within>a{background:var(--gold-soft)}
+}
