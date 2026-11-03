@@ -346,3 +346,38 @@ nav .sub a{font-size:.9rem}
 .has-sub>.sub-btn:hover{background:transparent}
 .has-sub:hover>a,.has-sub:focus-within>a{background:var(--gold-soft)}
 }
+
+/* v20: Giving page */
+.give{display:grid;gap:3rem;align-items:start}
+.give-text .big{margin-bottom:1.2rem}
+.give-text p:not(.big){max-width:34em}
+.give-verse{margin:2rem 0 0;padding-left:1rem;border-left:4px solid var(--gold)}
+.give-verse blockquote{margin:0}
+.give-verse blockquote p{margin:0;font:italic 500 1.25rem/1.45 Newsreader,Georgia,serif;max-width:30em}
+.give-verse figcaption{margin-top:.6rem;font:600 .75rem Figtree,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.give-card{margin:0 .7rem .7rem 0;padding:clamp(1.4rem,4vw,2rem);background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:4px;box-shadow:.7rem .7rem 0 var(--gold)}
+.give-h{margin:0 0 1.2rem;font-size:1.5rem}
+.give-qr{margin:0 0 1.4rem;padding:1.2rem;background:var(--gold-soft);border-radius:4px;text-align:center}
+.give-qr a{display:inline-block;border-radius:4px;transition:transform .25s}
+.give-qr a:hover{transform:scale(1.02)}
+.give-qr img{display:block;width:min(100%,280px);height:auto;margin:0 auto;padding:10px;background:#fff;border-radius:4px}
+.give-qr figcaption{margin-top:.8rem;font-size:.95rem;color:var(--muted)}
+.acct{margin:0 0 1.4rem}
+.acct div{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.acct div:first-child{border-top:2px solid var(--ink)}
+.acct dt{font-size:.95rem;color:var(--muted);white-space:nowrap}
+.acct dd{margin:0;font:600 1.2rem/1.2 Newsreader,Georgia,serif;text-align:right}
+.acct .acct-no{font-size:clamp(1.3rem,4.5vw,1.55rem);letter-spacing:.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.give-actions{display:grid;gap:.7rem}
+.give-actions .btn{text-align:center}
+.copy-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font:600 1rem Figtree,system-ui,sans-serif;color:var(--white);cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .15s}
+.copy-btn:active{transform:scale(.97)}
+.copy-btn .i-ok,.copy-btn .lbl-ok{display:none}
+.copy-btn.ok{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.copy-btn.ok .i-copy,.copy-btn.ok .lbl-copy{display:none}
+.copy-btn.ok .i-ok,.copy-btn.ok .lbl-ok{display:inline}
+.copy-btn.ok .i-ok{animation:give-pop .3s cubic-bezier(.2,.7,.2,1)}
+@keyframes give-pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.copy-status{min-height:1.4em;margin:.8rem 0 0;font-size:.95rem;color:var(--muted)}
+@media(min-width:860px){.give{grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}}
+@media(prefers-reduced-motion:reduce){.give-qr a:hover{transform:none}.copy-btn.ok .i-ok{animation:none}}
